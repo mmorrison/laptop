@@ -20,6 +20,9 @@ export PATH='/usr/local/bin:$PATH'" >> ~/.bash_profile
 echo "Installing Git, awesome version control system"
   brew install git
 
+echo "Lion comes with a version of postgres already installed and uses those binaries by default this is a fix for that"
+  curl http://nextmarvel.net/blog/downloads/fixBrewLionPostgres.sh | sh
+
 echo "Installing Postgres, a good open source relational database ..."
   brew install postgres --no-python
   brew info postgres
@@ -30,9 +33,6 @@ echo "Postgres set up"
   launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
   initdb /usr/local/var/postgres
   createuser -a -d postgres
-
-echo "Lion comes with a version of postgres already installed and uses those binaries by default this is a fix for that"
-  curl http://nextmarvel.net/blog/downloads/fixBrewLionPostgres.sh | sh
 
 echo "Installing Redis, a good key-value database ..."
   brew install redis
