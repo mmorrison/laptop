@@ -10,7 +10,7 @@ First, install [GCC for OS X](https://github.com/kennethreitz/osx-gcc-installer)
 
 Then, run this one-liner:
 
-    bash < <(curl -s https://raw.github.com/thoughtbot/laptop/master/mac)
+    bash < <(curl -s https://raw.github.com/mmorrison/laptop/master/mac)
 
 What it sets up
 ---------------
