@@ -24,7 +24,10 @@ echo "Installing Postgres, a good open source relational database ..."
   brew install postgres --no-python
   brew info postgres
   
-echo "Postgres set up"  
+echo "Postgres set up"
+  mkdir -p ~/Library/LaunchAgents
+  cp /usr/local/Cellar/postgresql/`psql --version|cut -d" " -f3|head -n 1`/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
+  launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
   initdb /usr/local/var/postgres
   createuser -a -d postgres
 
