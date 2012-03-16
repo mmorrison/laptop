@@ -17,8 +17,12 @@ echo "Put Homebrew location earlier in PATH ..."
 export PATH='/usr/local/bin:$PATH'" >> ~/.bash_profile
   source ~/.bash_profile
 
+echo "Installing Git, awesome version control system"
+  brew install git
+
 echo "Installing Postgres, a good open source relational database ..."
   brew install postgres --no-python
+  brew info postgres
 
 echo "Installing Redis, a good key-value database ..."
   brew install redis
@@ -34,6 +38,12 @@ echo "Installing ImageMagick, good for cropping and re-sizing images ..."
 
 echo "Installing QT, used by Capybara Webkit for headless Javascript integration testing ..."
   brew install qt
+
+echo "Installing wget"
+ brew install wget
+
+echo 'Installing Pow, a great zero-config Rack server for Mac OS X'
+  curl get.pow.cx | sh
 
 echo "Installing RVM (Ruby Version Manager) ..."
   bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
