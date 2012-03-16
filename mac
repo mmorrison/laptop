@@ -23,6 +23,13 @@ echo "Installing Git, awesome version control system"
 echo "Installing Postgres, a good open source relational database ..."
   brew install postgres --no-python
   brew info postgres
+  
+echo "Postgres set up"  
+  initdb /usr/local/var/postgres
+  createuser -a -d postgres
+
+echo "Lion comes with a version of postgres already installed and uses those binaries by default this is a fix for that"
+  curl http://nextmarvel.net/blog/downloads/fixBrewLionPostgres.sh | sh
 
 echo "Installing Redis, a good key-value database ..."
   brew install redis
